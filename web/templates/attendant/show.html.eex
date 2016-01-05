@@ -1,0 +1,33 @@
+<h2>Show attendant</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @attendant.name %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @attendant.image %>
+  </li>
+
+  <li>
+    <strong>Key:</strong>
+    <%= @attendant.key %>
+  </li>
+
+  <li>
+    <strong>Extra data:</strong>
+    <%= @attendant.extra_data %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @attendant.active %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: attendant_path(@conn, :edit, @attendant) %>
+<%= link "Back", to: attendant_path(@conn, :index) %>
