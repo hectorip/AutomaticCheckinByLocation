@@ -17,7 +17,8 @@ defmodule AutomaticAttendance.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/attdants", AttendantController
+    resources "/attedants", AttendantController
+     resources "/attendancelists", AttendanceListController
   end
 
   # Other scopes may use custom stacks.
