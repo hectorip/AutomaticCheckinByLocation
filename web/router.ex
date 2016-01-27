@@ -14,15 +14,16 @@ defmodule AutomaticAttendance.Router do
   end
 
   scope "/", AutomaticAttendance do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
     resources "/attedants", AttendantController
-     resources "/attendancelists", AttendanceListController
+    resources "/attendancelists", AttendanceListController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AutomaticAttendance do
-  #   pipe_through :api
-  # end
+  scope "/api", AutomaticAttendance do
+    pipe_through :api
+    post "/checkin/:username/:userkey", Attendance
+  end
 end
