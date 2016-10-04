@@ -1,17 +1,26 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2><%= gettext "Welcome to %{name}", name: "Phoenix Boilerplate!" %></h2>
+  <p class="lead">
+  This project already includes some useful functionalities and will be adding more
+  in the future. </p>
 </div>
 
 <div class="row marketing">
-  <div class="col-lg-6">
+  <div class="col-lg-4">
+    <h4> Functionalities</h4>
+    <ul>
+      <li><%= link "Login", to: session_path(@conn, :new) %></li>
+      <li><%= link "Register", to: user_path(@conn, :register) %></li>
+    </ul>
+  </div>
+  <div class="col-lg-4">
     <h4>Resources</h4>
     <ul>
       <li>
         <a href="http://phoenixframework.org/docs/overview">Guides</a>
       </li>
       <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
+        <a href="https://hexdocs.pm/phoenix">Docs</a>
       </li>
       <li>
         <a href="https://github.com/phoenixframework/phoenix">Source</a>
@@ -19,7 +28,7 @@
     </ul>
   </div>
 
-  <div class="col-lg-6">
+  <div class="col-lg-4">
     <h4>Help</h4>
     <ul>
       <li>
@@ -32,5 +41,23 @@
         <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
       </li>
     </ul>
+  </div>
+</div>
+ <div class="row">
+   <div class="col-lg-12">
+     <h4>Next functionalities: </h4>
+     <ul>
+       <li> Social Login/Register </li>
+       <li> Admin ready </li>
+     </ul>
+   </div>
+ </div>
+<div class="row">
+  <div class="col-lg-12">
+    <%= if @current_user do %>
+      You're logged in!
+    <%= else %>
+      <%= render Boilerplate.SessionView, "new.html", conn: @conn %>
+    <% end %>
   </div>
 </div>

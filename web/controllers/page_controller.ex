@@ -1,5 +1,5 @@
-defmodule AutomaticAttendance.PageController do
-  use AutomaticAttendance.Web, :controller
+defmodule Boilerplate.PageController do
+  use Boilerplate.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

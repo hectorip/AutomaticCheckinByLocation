@@ -1,0 +1,33 @@
+<h1> Register </h1>
+
+<%= form_for @changeset, user_path(@conn, :register_user), fn f -> %>
+    <%= if @changeset.action do %>
+        <p> Something went wrong, please check the errors below </p>
+    <% end %>
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <%= text_input f, :first_name, placeholder: "John", class: "form-control" %>
+        <%= error_tag f, :first_name %>
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <%= text_input f, :last_name, placeholder: "Snow", class: "form-control" %>
+        <%= error_tag f, :last_name %>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <%= text_input f, :username, placeholder: "johnsnow", class: "form-control" %>
+        <%= error_tag f, :username %>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <%= text_input f, :email, placeholder: "johnsnow@stark.com", class: "form-control" %>
+        <%= error_tag f, :email %>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <%= password_input f, :password, placeholder: "youknownothing", class: "form-control" %>
+        <%= error_tag f, :password %>
+    </div>
+    <%= submit "Register", class: "btn btn-primary" %>
+<% end %>

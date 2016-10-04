@@ -1,3 +1,3 @@
-defmodule AutomaticAttendance.LayoutViewTest do
-  use AutomaticAttendance.ConnCase, async: true
+defmodule Boilerplate.LayoutViewTest do
+  use Boilerplate.ConnCase, async: true
 end

@@ -1,3 +1,3 @@
-defmodule AutomaticAttendance.PageView do
-  use AutomaticAttendance.Web, :view
+defmodule Boilerplate.PageView do
+  use Boilerplate.Web, :view
 end

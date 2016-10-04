@@ -1,10 +1,10 @@
-defmodule AutomaticAttendance.ConnCase do
+defmodule Boilerplate.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
 
   Such tests rely on `Phoenix.ConnTest` and also
-  imports other functionality to make it easier
+  import other functionality to make it easier
   to build and query models.
 
   Finally, if the test case interacts with the database,
@@ -20,22 +20,25 @@ defmodule AutomaticAttendance.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias AutomaticAttendance.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      alias Boilerplate.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
 
-      import AutomaticAttendance.Router.Helpers
+      import Boilerplate.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint AutomaticAttendance.Endpoint
+      @endpoint Boilerplate.Endpoint
     end
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Boilerplate.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(AutomaticAttendance.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Boilerplate.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

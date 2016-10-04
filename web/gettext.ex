@@ -1,11 +1,11 @@
-defmodule AutomaticAttendance.Gettext do
+defmodule Boilerplate.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
-  By using [Gettext](http://hexdocs.pm/gettext),
+  By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import AutomaticAttendance.Gettext
+      import Boilerplate.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -18,7 +18,7 @@ defmodule AutomaticAttendance.Gettext do
       # Domain-based translation
       dgettext "errors", "Here is the error message to translate"
 
-  See the [Gettext Docs](http://hexdocs.pm/gettext) for detailed usage.
+  See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :automatic_attendance
+  use Gettext, otp_app: :boilerplate
 end

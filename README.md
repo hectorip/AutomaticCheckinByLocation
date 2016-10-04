@@ -1,12 +1,20 @@
-# Automatic Checkin By Geolocation
-System using IFTTT to register attendance based on location.
+# Boilerplate
 
-# Setup
+To start your Phoenix app:
 
-We will be using the Maker Channel to connect the hook.
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+  * Install Node.js dependencies with `npm install`
+  * Start Phoenix endpoint with `mix phoenix.server`
 
-Please visit [the documentation](https://ifttt.com/maker) to see more details av=bout how to configure it.
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-# Installation
+Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
-I will provide soon a tutorial to get this working in your own server.
+## Learn more
+
+  * Official website: http://www.phoenixframework.org/
+  * Guides: http://phoenixframework.org/docs/overview
+  * Docs: https://hexdocs.pm/phoenix
+  * Mailing list: http://groups.google.com/group/phoenix-talk
+  * Source: https://github.com/phoenixframework/phoenix

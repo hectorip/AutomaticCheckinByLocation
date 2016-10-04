@@ -1,5 +1,5 @@
-defmodule AutomaticAttendance.PageControllerTest do
-  use AutomaticAttendance.ConnCase
+defmodule Boilerplate.PageControllerTest do
+  use Boilerplate.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

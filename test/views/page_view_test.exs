@@ -1,3 +1,3 @@
-defmodule AutomaticAttendance.PageViewTest do
-  use AutomaticAttendance.ConnCase, async: true
+defmodule Boilerplate.PageViewTest do
+  use Boilerplate.ConnCase, async: true
 end

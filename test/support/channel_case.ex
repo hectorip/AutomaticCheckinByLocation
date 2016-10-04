@@ -1,10 +1,10 @@
-defmodule AutomaticAttendance.ChannelCase do
+defmodule Boilerplate.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
 
   Such tests rely on `Phoenix.ChannelTest` and also
-  imports other functionality to make it easier
+  import other functionality to make it easier
   to build and query models.
 
   Finally, if the test case interacts with the database,
@@ -20,19 +20,22 @@ defmodule AutomaticAttendance.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias AutomaticAttendance.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      alias Boilerplate.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint AutomaticAttendance.Endpoint
+      @endpoint Boilerplate.Endpoint
     end
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Boilerplate.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(AutomaticAttendance.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Boilerplate.Repo, {:shared, self()})
     end
 
     :ok

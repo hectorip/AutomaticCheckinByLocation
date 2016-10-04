@@ -1,12 +1,12 @@
-defmodule AutomaticAttendance.Web do
+defmodule Boilerplate.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use AutomaticAttendance.Web, :controller
-      use AutomaticAttendance.Web, :view
+      use Boilerplate.Web, :controller
+      use Boilerplate.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -22,7 +22,7 @@ defmodule AutomaticAttendance.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -30,12 +30,13 @@ defmodule AutomaticAttendance.Web do
     quote do
       use Phoenix.Controller
 
-      alias AutomaticAttendance.Repo
+      alias Boilerplate.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
-      import AutomaticAttendance.Router.Helpers
-      import AutomaticAttendance.Gettext
+      import Boilerplate.Router.Helpers
+      import Boilerplate.Gettext
+      import Boilerplate.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -49,15 +50,16 @@ defmodule AutomaticAttendance.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import AutomaticAttendance.Router.Helpers
-      import AutomaticAttendance.ErrorHelpers
-      import AutomaticAttendance.Gettext
+      import Boilerplate.Router.Helpers
+      import Boilerplate.ErrorHelpers
+      import Boilerplate.Gettext
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+      import Boilerplate.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -65,10 +67,10 @@ defmodule AutomaticAttendance.Web do
     quote do
       use Phoenix.Channel
 
-      alias AutomaticAttendance.Repo
+      alias Boilerplate.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
-      import AutomaticAttendance.Gettext
+      import Ecto.Query
+      import Boilerplate.Gettext
     end
   end
 

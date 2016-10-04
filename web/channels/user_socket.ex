@@ -1,8 +1,8 @@
-defmodule AutomaticAttendance.UserSocket do
+defmodule Boilerplate.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", AutomaticAttendance.RoomChannel
+  # channel "room:*", Boilerplate.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule AutomaticAttendance.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     AutomaticAttendance.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     Boilerplate.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

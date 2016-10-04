@@ -1,3 +1,3 @@
-defmodule AutomaticAttendance.LayoutView do
-  use AutomaticAttendance.Web, :view
+defmodule Boilerplate.LayoutView do
+  use Boilerplate.Web, :view
 end

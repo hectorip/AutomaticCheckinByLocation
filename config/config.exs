@@ -5,13 +5,16 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :boilerplate,
+  ecto_repos: [Boilerplate.Repo]
+
 # Configures the endpoint
-config :automatic_attendance, AutomaticAttendance.Endpoint,
+config :boilerplate, Boilerplate.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
-  secret_key_base: "gQXCnLvs2hNSdF1SHNaQiL6jUyZ9BOpuTALli7lNeROUDjFwagM1vspJuXyIQpvM",
-  render_errors: [accepts: ~w(html json)],
-  pubsub: [name: AutomaticAttendance.PubSub,
+  secret_key_base: "Deko314RLoTDrVm6XdriOGPYQojocO7XnvGjTTVQ5cfrUnoAfodrzOTV6FgamHAr",
+  render_errors: [view: Boilerplate.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Boilerplate.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -22,8 +25,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false
