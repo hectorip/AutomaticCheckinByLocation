@@ -38,6 +38,6 @@ config :boilerplate, Boilerplate.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "boilerplate_dev",
+  database: "attendance_app_dev",
   hostname: "localhost",
   pool_size: 10

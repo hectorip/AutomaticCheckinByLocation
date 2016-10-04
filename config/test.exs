@@ -14,6 +14,6 @@ config :boilerplate, Boilerplate.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "boilerplate_test",
+  database: "attendance_app_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
