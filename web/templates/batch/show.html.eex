@@ -1,0 +1,28 @@
+<h2>Show batch</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @batch.name %>
+  </li>
+
+  <li>
+    <strong>Number:</strong>
+    <%= @batch.number %>
+  </li>
+
+  <li>
+    <strong>Photo url:</strong>
+    <%= @batch.photo_url %>
+  </li>
+
+  <li>
+    <strong>Logo url:</strong>
+    <%= @batch.logo_url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: batch_path(@conn, :edit, @batch) %>
+<%= link "Back", to: batch_path(@conn, :index) %>

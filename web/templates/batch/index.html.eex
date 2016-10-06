@@ -1,0 +1,32 @@
+<h2>Listing batches</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Photo url</th>
+      <th>Logo url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for batch <- @batches do %>
+    <tr>
+      <td><%= batch.name %></td>
+      <td><%= batch.number %></td>
+      <td><%= batch.photo_url %></td>
+      <td><%= batch.logo_url %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: batch_path(@conn, :show, batch), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: batch_path(@conn, :edit, batch), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: batch_path(@conn, :delete, batch), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New batch", to: batch_path(@conn, :new) %>

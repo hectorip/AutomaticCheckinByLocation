@@ -1,0 +1,6 @@
+<h2>Edit batch</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: batch_path(@conn, :update, @batch) %>
+
+<%= link "Back", to: batch_path(@conn, :index) %>
