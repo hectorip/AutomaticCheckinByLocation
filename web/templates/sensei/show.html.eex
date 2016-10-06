@@ -1,0 +1,28 @@
+<h2>Show sensei</h2>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @sensei.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @sensei.last_name %>
+  </li>
+
+  <li>
+    <strong>Photo url:</strong>
+    <%= @sensei.photo_url %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @sensei.bio %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: sensei_path(@conn, :edit, @sensei) %>
+<%= link "Back", to: sensei_path(@conn, :index) %>

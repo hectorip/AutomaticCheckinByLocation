@@ -27,6 +27,7 @@ defmodule Boilerplate.Router do
     pipe_through [:browser, :authenticate_user]
     resources "/users", UserController
     resources "/batches", BatchController
+    resources "/belts", BeltController
   end
   # Other scopes may use custom stacks.
   # scope "/api", Boilerplate do

@@ -1,0 +1,32 @@
+<h2>Listing senseis</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Photo url</th>
+      <th>Bio</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sensei <- @senseis do %>
+    <tr>
+      <td><%= sensei.first_name %></td>
+      <td><%= sensei.last_name %></td>
+      <td><%= sensei.photo_url %></td>
+      <td><%= sensei.bio %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: sensei_path(@conn, :show, sensei), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: sensei_path(@conn, :edit, sensei), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: sensei_path(@conn, :delete, sensei), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New sensei", to: sensei_path(@conn, :new) %>

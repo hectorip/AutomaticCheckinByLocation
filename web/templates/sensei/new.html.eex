@@ -1,0 +1,6 @@
+<h2>New sensei</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: sensei_path(@conn, :create) %>
+
+<%= link "Back", to: sensei_path(@conn, :index) %>
