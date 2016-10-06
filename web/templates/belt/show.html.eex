@@ -1,0 +1,23 @@
+<h2>Show belt</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @belt.name %>
+  </li>
+
+  <li>
+    <strong>Logo:</strong>
+    <%= @belt.logo %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @belt.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: belt_path(@conn, :edit, @belt) %>
+<%= link "Back", to: belt_path(@conn, :index) %>

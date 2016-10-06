@@ -1,0 +1,6 @@
+<h2>New belt</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: belt_path(@conn, :create) %>
+
+<%= link "Back", to: belt_path(@conn, :index) %>

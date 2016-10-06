@@ -1,0 +1,30 @@
+<h2>Listing belts</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Logo</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for belt <- @belts do %>
+    <tr>
+      <td><%= belt.name %></td>
+      <td><%= belt.logo %></td>
+      <td><%= belt.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: belt_path(@conn, :show, belt), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: belt_path(@conn, :edit, belt), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: belt_path(@conn, :delete, belt), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New belt", to: belt_path(@conn, :new) %>
