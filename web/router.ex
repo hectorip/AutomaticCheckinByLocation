@@ -28,6 +28,7 @@ defmodule Boilerplate.Router do
     resources "/users", UserController
     resources "/batches", BatchController
     resources "/belts", BeltController
+    resources "/senseis", SenseiController
   end
   # Other scopes may use custom stacks.
   # scope "/api", Boilerplate do
