@@ -32,7 +32,8 @@ defmodule Boilerplate.Router do
     resources "/venues", VenueController
   end
   # Other scopes may use custom stacks.
-  # scope "/api", Boilerplate do
-  #   pipe_through :api
-  # end
+  scope "/api", Boilerplate do
+     pipe_through :api
+     get "/assitance", ApiController, :assitance
+  end
 end
