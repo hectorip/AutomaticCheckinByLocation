@@ -1,0 +1,28 @@
+<h2>Show group</h2>
+
+<ul>
+
+  <li>
+    <strong>Belt:</strong>
+    <%= @group.belt_id %>
+  </li>
+
+  <li>
+    <strong>Batch:</strong>
+    <%= @group.batch_id %>
+  </li>
+
+  <li>
+    <strong>Master sensei:</strong>
+    <%= @group.master_sensei_id %>
+  </li>
+
+  <li>
+    <strong>Photo url:</strong>
+    <%= @group.photo_url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: group_path(@conn, :edit, @group) %>
+<%= link "Back", to: group_path(@conn, :index) %>

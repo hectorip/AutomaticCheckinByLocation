@@ -30,10 +30,11 @@ defmodule Boilerplate.Router do
     resources "/belts", BeltController
     resources "/senseis", SenseiController
     resources "/venues", VenueController
+    resources "/groups", GroupController
   end
   # Other scopes may use custom stacks.
   scope "/api", Boilerplate do
      pipe_through :api
-     get "/assitance", ApiController, :assitance
+     post "/assitance", ApiController, :assitance
   end
 end
