@@ -1,0 +1,48 @@
+<h2>Show student</h2>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @student.first_name %>
+  </li>
+
+  <li>
+    <strong>First last name:</strong>
+    <%= @student.first_last_name %>
+  </li>
+
+  <li>
+    <strong>Second last name:</strong>
+    <%= @student.second_last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @student.phone %>
+  </li>
+
+  <li>
+    <strong>Photo url:</strong>
+    <%= @student.photo_url %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @student.bio %>
+  </li>
+
+  <li>
+    <strong>Current group:</strong>
+    <%= @student.current_group %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: student_path(@conn, :edit, @student) %>
+<%= link "Back", to: student_path(@conn, :index) %>

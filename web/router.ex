@@ -7,7 +7,7 @@ defmodule Boilerplate.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Boilerplate.Auth, repo: Boilerplate.Repo 
+    plug Boilerplate.Auth, repo: Boilerplate.Repo
   end
 
   pipeline :api do
@@ -31,8 +31,9 @@ defmodule Boilerplate.Router do
     resources "/senseis", SenseiController
     resources "/venues", VenueController
     resources "/groups", GroupController
+    resources "/students", StudentController
   end
-  # Other scopes may use custom stacks.
+
   scope "/api", Boilerplate do
      pipe_through :api
      post "/assitance", ApiController, :assitance
