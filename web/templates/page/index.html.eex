@@ -6,7 +6,8 @@
 <div class="row">
   <div class="col-lg-12">
     <%= if @current_user do %>
-      Bienvenido a la aplicación de pase de lista automático, usando la locación del usuario.
+      Bienvenido a la aplicación de administración del alumnado de 
+      un curso nómada.
       Puedes empezar por:
       <ul>
         <li><%= link "Batches", to: batch_path(@conn, :index) %></li>
