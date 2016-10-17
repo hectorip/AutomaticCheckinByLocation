@@ -10,11 +10,11 @@
       un curso nómada.
       Puedes empezar por:
       <ul>
-        <li><%= link "Batches", to: batch_path(@conn, :index) %></li>
-        <li><%= link "Venues", to: venue_path(@conn, :index) %></li>
-        <li><%= link "Senseis", to: sensei_path(@conn, :index) %></li>
-        <li><%= link "Cintas", to: belt_path(@conn, :index) %></li>
-        <li><%= link "Usuarios", to: user_path(@conn, :index) %></li>
+        <li class="button primary"><%= link "Batches", to: batch_path(@conn, :index) %></li>
+        <li class="button primary"><%= link "Venues", to: venue_path(@conn, :index) %></li>
+        <li class="button primary"><%= link "Senseis", to: sensei_path(@conn, :index) %></li>
+        <li class="button primary"><%= link "Cintas", to: belt_path(@conn, :index) %></li>
+        <li class="button primary"><%= link "Usuarios", to: user_path(@conn, :index) %></li>
       </ul>
     <%= else %>
       <%= render Boilerplate.SessionView, "new.html", conn: @conn %>
